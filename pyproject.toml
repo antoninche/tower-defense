@@ -1,0 +1,27 @@
+[project]
+name = "tower-defense"
+version = "1.0.0"
+description = "Un jeu de tower defense rétro en Python avec Pyxel."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Antonin" }]
+keywords = ["jeu", "pyxel", "tower-defense", "retro", "pixel-art"]
+dependencies = ["pyxel>=2.0"]
+
+[project.urls]
+Repository = "https://github.com/VOTRE-UTILISATEUR/tower-defense"
+
+[project.scripts]
+tower-defense = "tower_defense:lancer"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["tower_defense"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"

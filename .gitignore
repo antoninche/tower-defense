@@ -1,0 +1,28 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Pyxel
+*.pyxapp
+*.html
+
+# Captures Pyxel (générées avec la touche capture)
+pyxel-*.png
+pyxel-*.gif
+
+# Outils / IDE
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+.idea/
+.vscode/
