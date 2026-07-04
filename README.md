@@ -40,7 +40,7 @@ Il vous faut **Python 3.8+**.
 
 ```bash
 # 1. Cloner le dépôt
-git clone https://github.com/VOTRE-UTILISATEUR/tower-defense.git
+git clone https://github.com/antoninche/tower-defense.git
 cd tower-defense
 
 # 2. Créer un environnement virtuel (recommandé)

@@ -10,7 +10,7 @@ keywords = ["jeu", "pyxel", "tower-defense", "retro", "pixel-art"]
 dependencies = ["pyxel>=2.0"]
 
 [project.urls]
-Repository = "https://github.com/VOTRE-UTILISATEUR/tower-defense"
+Repository = "https://github.com/antoninche/tower-defense"
 
 [project.scripts]
 tower-defense = "tower_defense:lancer"
