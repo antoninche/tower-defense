@@ -1,0 +1,3 @@
+# Dépendances nécessaires uniquement pour construire les exécutables.
+-r requirements.txt
+pyinstaller>=6.0

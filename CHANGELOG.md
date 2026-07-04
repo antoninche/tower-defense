@@ -15,6 +15,7 @@ Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 - **Barres de vie** au-dessus des ennemis et **effets d'explosion** à leur mort.
 - Bannière d'annonce de vague.
 - Contrôles étendus : sélection de tour (1-4), pose à l'Espace, pause (P), rejouer (R), WASD.
+- **Exécutables autonomes** Windows (`.exe`) et macOS (`.app`) via PyInstaller, construits et publiés automatiquement par un workflow GitHub Actions.
 
 ### Modifié
 - Réorganisation du code monolithique en un **package modulaire** (`settings`, `audio`, `entities`, `game`).

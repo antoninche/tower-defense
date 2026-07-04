@@ -1,5 +1,8 @@
 """Boucle de jeu, machine à états et interface (HUD)."""
 
+import os
+import sys
+
 import pyxel
 
 from . import audio
@@ -23,6 +26,10 @@ class Jeu:
     """Point d'entrée : initialise Pyxel puis lance la boucle."""
 
     def __init__(self):
+        # En exécutable figé (PyInstaller), Pyxel accède au dossier du module
+        # appelant, qui n'existe pas sur disque : on le crée pour éviter un crash.
+        if getattr(sys, "frozen", False):
+            os.makedirs(os.path.dirname(os.path.abspath(__file__)), exist_ok=True)
         pyxel.init(LARGEUR, HAUTEUR, title=TITRE, fps=FPS, quit_key=pyxel.KEY_NONE)
         pyxel.load(CHEMIN_RESSOURCES)
         audio.configurer()

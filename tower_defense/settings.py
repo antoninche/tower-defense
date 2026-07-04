@@ -4,6 +4,7 @@ Regroupe au même endroit toutes les valeurs qui pilotent l'équilibrage et
 l'affichage. Modifier le gameplay se fait ici, sans toucher à la logique.
 """
 
+import sys
 from pathlib import Path
 
 # --- Fenêtre & rendu -------------------------------------------------------
@@ -18,7 +19,12 @@ FPS = 30
 TITRE = "Tower Defense"
 
 # --- Ressources ------------------------------------------------------------
-RACINE = Path(__file__).resolve().parent.parent
+# En exécutable figé (PyInstaller), les ressources sont extraites dans un
+# dossier temporaire exposé via sys._MEIPASS. Sinon, on part de la racine du dépôt.
+if getattr(sys, "frozen", False):
+    RACINE = Path(getattr(sys, "_MEIPASS", Path(sys.executable).parent))
+else:
+    RACINE = Path(__file__).resolve().parent.parent
 CHEMIN_RESSOURCES = str(RACINE / "assets" / "theme.pyxres")
 
 # --- Carte & chemin --------------------------------------------------------

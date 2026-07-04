@@ -1,0 +1,56 @@
+name: Release
+
+# Construit les exécutables natifs (.exe Windows, .app macOS) et les attache
+# à la release GitHub correspondant au tag « vX.Y.Z ».
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag de la release (ex : v1.0.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            nom: TowerDefense-windows
+          - os: macos-latest
+            nom: TowerDefense-macos
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances de build
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-build.txt
+
+      - name: Construire l'exécutable
+        run: pyinstaller tower-defense.spec --noconfirm --clean
+
+      - name: Empaqueter (Windows)
+        if: runner.os == 'Windows'
+        run: Compress-Archive -Path dist/TowerDefense.exe -DestinationPath TowerDefense-windows.zip
+
+      - name: Empaqueter (macOS)
+        if: runner.os == 'macOS'
+        run: cd dist && zip -r ../TowerDefense-macos.zip TowerDefense.app
+
+      - name: Publier sur la release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          files: ${{ matrix.nom }}.zip
+          fail_on_unmatched_files: true

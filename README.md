@@ -34,9 +34,21 @@ Placez vos tours, survivez à 15 vagues d'ennemis et protégez votre base.
 |:---:|:---:|
 | ![Menu](docs/menu.png) | ![Jeu](docs/gameplay.png) |
 
+## Téléchargements
+
+Pas besoin de Python : récupérez l'exécutable prêt à l'emploi depuis la
+[page des releases](https://github.com/antoninche/tower-defense/releases).
+
+| Plateforme | Fichier |
+|:---|:---|
+| Windows | `TowerDefense-windows.zip` → `TowerDefense.exe` |
+| macOS | `TowerDefense-macos.zip` → `TowerDefense.app` |
+
+> Sur macOS, au premier lancement : clic droit sur l'app › **Ouvrir** (application non signée).
+
 ## Installation & lancement
 
-Il vous faut **Python 3.8+**.
+Pour lancer depuis les sources, il vous faut **Python 3.8+**.
 
 ```bash
 # 1. Cloner le dépôt
