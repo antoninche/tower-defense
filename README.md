@@ -16,25 +16,25 @@ Placez vos tours, survivez à 15 vagues d'ennemis et protégez votre base.
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 🗺️ **Carte en pixel art** avec un chemin sinueux à défendre
-- 🏹 **4 types de tours** aux comportements distincts (portée, cadence, dégâts, mine de contact)
-- 🌊 **15 vagues** de difficulté croissante avec des ennemis de plus en plus coriaces
-- ❤️ **Système de vies** : chaque ennemi qui atteint la base coûte une vie — défaite à 0
-- 🏆 **Condition de victoire** : survivez à la dernière vague
-- 💰 **Économie** : gagnez de l'or en éliminant les ennemis, dépensez-le en tours
-- 🎯 **Interface soignée** : panneau HUD dédié, aperçu de portée, indicateur de placement valide/invalide, barres de vie
-- 🔊 **Effets sonores** générés par code
-- ⏸️ **Menu, pause, écrans de défaite et de victoire**
+- **Carte en pixel art** avec un chemin sinueux à défendre
+- **4 types de tours** aux comportements distincts (portée, cadence, dégâts, mine de contact)
+- **15 vagues** de difficulté croissante avec des ennemis de plus en plus coriaces
+- **Système de vies** : chaque ennemi qui atteint la base coûte une vie — défaite à 0
+- **Condition de victoire** : survivez à la dernière vague
+- **Économie** : gagnez de l'or en éliminant les ennemis, dépensez-le en tours
+- **Interface soignée** : panneau HUD dédié, aperçu de portée, indicateur de placement valide/invalide, barres de vie
+- **Effets sonores** générés par code
+- **Menu, pause, écrans de défaite et de victoire**
 
-## 🎮 Aperçu
+## Aperçu
 
 | Menu | En jeu |
 |:---:|:---:|
 | ![Menu](docs/menu.png) | ![Jeu](docs/gameplay.png) |
 
-## 🚀 Installation & lancement
+## Installation & lancement
 
 Il vous faut **Python 3.8+**.
 
@@ -54,9 +54,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-> 💡 Vous pouvez aussi lancer le jeu avec `python -m tower_defense`.
+> Vous pouvez aussi lancer le jeu avec `python -m tower_defense`.
 
-## ⌨️ Commandes
+## Commandes
 
 | Touche | Action |
 |:---|:---|
@@ -67,7 +67,7 @@ python app.py
 | **R** | Rejouer (après une défaite ou une victoire) |
 | **Q** | Quitter |
 
-## 🏹 Les tours
+## Les tours
 
 | # | Tour | Coût | Dégâts | Portée | Particularité |
 |:---:|:---|:---:|:---:|:---:|:---|
@@ -76,7 +76,7 @@ python app.py
 | 3 | **Mortier** | 55 | 4 | 80 | Longue portée, gros dégâts |
 | 4 | **Mine** | 80 | ∞ | contact | Détruit tout ennemi au contact, peut se poser sur le chemin |
 
-## 🧠 Comment jouer
+## Comment jouer
 
 1. Au démarrage, appuyez sur **Espace** pour lancer la partie.
 2. Déplacez le curseur et choisissez une tour avec les touches **1 à 4**.
@@ -84,7 +84,7 @@ python app.py
 4. Posez la tour avec **Espace**. Éliminez les ennemis pour gagner de l'or et financer votre défense.
 5. Ne laissez pas les ennemis atteindre la base : chaque fuite coûte une vie. Tenez **15 vagues** pour gagner !
 
-## 🗂️ Architecture du projet
+## Architecture du projet
 
 ```
 tower-defense/
@@ -108,17 +108,17 @@ Le code sépare clairement **la configuration** (`settings.py`), **les entités*
 et **l'orchestration** (`game.py`, une machine à états : menu → jeu → pause → défaite/victoire).
 Tout l'équilibrage du jeu se règle depuis `settings.py`.
 
-## 🛠️ Technologies
+## Technologies
 
 - [**Python**](https://www.python.org/)
 - [**Pyxel**](https://github.com/kitao/pyxel) — moteur de jeu rétro « fantasy console »
 
-## 📜 Histoire du projet
+## Histoire du projet
 
 Ce jeu est né lors d'une **Nuit du Code**, puis a été retravaillé pour offrir un rendu
 plus abouti : interface dédiée, système de vies et de victoire, sons, effets visuels et
 une base de code modulaire.
 
-## 📄 Licence
+## Licence
 
 Distribué sous licence **MIT**. Voir le fichier [LICENSE](LICENSE).
